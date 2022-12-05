@@ -38,6 +38,7 @@ Simple test script to verify the below mentioned acceptance criteria using the A
 4. Clone/download project
     <br> `git clone https://github.com/sharifdevtest/assurity-api-test.git`
     <br> 
+    
 5. Go to the project folder 
     <br> `cd assurity-api-test`
     <br> 
@@ -45,3 +46,38 @@ Simple test script to verify the below mentioned acceptance criteria using the A
     <br> `pytest -v .`
     <br> 
    
+
+### **Execute negative test** : Optional
+---
+- Edit **_test_assurity_sample_api.py_** and incorporate invalid data for negative testing  
+    <br>
+    1.  Negative <u> **test_status_code** </u> : 
+    <br><br> Change Line 20 : 
+    <br> `URL = "https://api.tmsandbox.co.nz/v1/Categories/627/Details.json?catalogue=false"`
+    <br><br> Run command :  `pytest -v .`
+    <br><br>
+
+    2.  Negative <u> **test_name** </u> : 
+    <br><br> Change Line 30 :
+    <br> `assert response_body['Name'] == "Carbon credits1", "Name is invalid, got {}".format(response_body['Name'])`
+    <br><br> Run command :  `pytest -v .`
+    <br><br>
+   
+    3.  Negative <u> **test_can_relist** </u> : 
+    <br><br> Change Line 34 :
+    <br> `assert response_body['CanRelist'] == False, "CanRelist is not True"`
+    <br><br> Run command :  `pytest -v .`
+    <br><br>
+   
+    4.  Negative <u> **test_promotion_gallery** </u> : 
+    <br><br> Change Line 40 :
+    <br> `if element['Name'] == "Gallery1":`
+    <br><br> Run command :  `pytest -v .`
+    <br><br>
+
+    5.  Negative <u> **test_promotion_gallery_description** </u> : 
+    <br><br> Change Line 41 :
+    <br> `assert element['Description'] == "Good position in category1"`
+    <br><br> Run command :  `pytest -v .`
+    <br><br>
+
